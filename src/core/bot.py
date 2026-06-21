@@ -67,16 +67,23 @@ class BotEngine:
                         if not os.path.exists(executable_path):
                             executable_path = os.path.join(local_appdata, 'BraveSoftware', 'Brave-Browser', 'Application', 'brave.exe')
                         user_data_dir = os.path.join(local_appdata, 'BraveSoftware', 'Brave-Browser', 'User Data')
+                        # Forcibly kill brave to release the SingletonLock
+                        os.system("taskkill /F /IM brave.exe /T >nul 2>&1")
                     elif browser_name == "Chrome":
                         executable_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
                         if not os.path.exists(executable_path):
                             executable_path = os.path.join(local_appdata, 'Google', 'Chrome', 'Application', 'chrome.exe')
                         user_data_dir = os.path.join(local_appdata, 'Google', 'Chrome', 'User Data')
+                        os.system("taskkill /F /IM chrome.exe /T >nul 2>&1")
                     elif browser_name == "Edge":
                         executable_path = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
                         user_data_dir = os.path.join(local_appdata, 'Microsoft', 'Edge', 'User Data')
+                        os.system("taskkill /F /IM msedge.exe /T >nul 2>&1")
                     else:
                         raise ValueError("Bilinmeyen tarayıcı!")
+
+                    # Ensure any lingering processes are completely dead before accessing the lockfile
+                    time.sleep(1)
 
                     try:
                         context = p.chromium.launch_persistent_context(
