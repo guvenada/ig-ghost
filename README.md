@@ -18,7 +18,7 @@ Unlike traditional Selenium-based bots that rely on slow, brittle DOM interactio
 
 <div align="center">
   <!-- TODO: Replace the src below with your actual demo GIF once you record it -->
-  <img src="src/assets/demo.png" alt="IG GHOST Demo" width="700"/>
+  <img src="src/assets/demo_v2.png" alt="IG GHOST Demo" width="700"/>
   <p><i>*Demo showcasing the Dark Routing speed and API Spoofing UI*</i></p>
 </div>
 

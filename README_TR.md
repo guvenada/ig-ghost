@@ -18,7 +18,7 @@ Yavaş ve kırılgan DOM etkileşimlerine dayanan geleneksel Selenium tabanlı b
 
 <div align="center">
   <!-- TODO: Uygulama içinden alınacak bir GIF buraya eklenebilir -->
-  <img src="src/assets/demo.png" alt="IG GHOST Demo" width="700"/>
+  <img src="src/assets/demo_v2.png" alt="IG GHOST Demo" width="700"/>
   <p><i>*Dark Routing hızını ve API Spoofing arayüzünü gösteren demo*</i></p>
 </div>
 
